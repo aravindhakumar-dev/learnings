@@ -81,16 +81,23 @@
 
     Slider.prototype.setSize = function (radius) {
 
-        this.wrapper.style.width = 2 * radius + 'px';
-        this.wrapper.style.height = radius + 'px';
+        this.wrapper.style.width = radius + 'px';
+        this.wrapper.style.height = 2 * radius + 'px';
 
         let r = 2 * radius * (1 - this.startSetup.slideSize);
         this.slidesHolder.style.width = this.slidesHolder.style.height = r + 'px';
         this.slidesRepositioning(r / 2);
 
-        this.slidesHolder.style.marginTop = radius * this.startSetup.slideSize + 'px';
+        this.slidesHolder.style.marginTop = 0;
+        this.slidesHolder.style.marginBottom = radius * this.startSetup.slideSize + 'px';
+
+
         this.descriptionsHolder.style.width = (r / 2 - r * this.startSetup.slideSize + 20) * 2 + 'px';
-        this.descriptionsHolder.style.height = r / 2 - r * this.startSetup.slideSize + 20 + 'px';
+        this.descriptionsHolder.style.height = r / 2 + r * this.startSetup.slideSize + 'px';
+
+        this.descriptionsHolder.style.marginTop = 0;
+        this.descriptionsHolder.style.marginBottom = r * this.startSetup.slideSize + 'px';
+
 
         this.slidesSize = Math.min(2 * radius * this.startSetup.slideSize, this.stepAngle * radius * (1 - this.startSetup.slideSize) - 50);
         this.descriptionsHolder.style.fontSize = window.innerHeight < window.innerWidth ? '1.2vh'
