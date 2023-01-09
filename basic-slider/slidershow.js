@@ -1,38 +1,29 @@
-$(document).ready(function () {
-    $("#prev_image").click(function () {
-        prev();
-    });
-    $("#next_image").click(function () {
-        next();
-    });
-});
+console.clear();
+var log = console.log.bind(console);
 
-// Write all the names of images in slideshow
-var images = ["image1", "image2", "image3", "image4"];
+var init = function () {
+    var carousel = document.querySelector(".carousel");
+    var items = document.querySelectorAll(".item");
+    var prev = document.querySelector(".prev");
+    var next = document.querySelector(".next");
+    var currdeg = 0;
 
-function prev() {
-    $('#slideshow_image').fadeOut(300, function () {
-        var prev_val = document.getElementById("img_no").value;
-        var prev_val = Number(prev_val) - 1;
-        if (prev_val < = -1)
-    {
-        prev_val = images.length - 1;
-    }
-    $('#slideshow_image').attr('src', 'images/' + images[prev_val] + '.jpg');
-    document.getElementById("img_no").value = prev_val;
-});
-$('#slideshow_image').fadeIn(1000);
-   }
+    prev.addEventListener("click", rotate.bind(null, "prev"));
+    next.addEventListener("click", rotate.bind(null, "next"));
 
-function next() {
-    $('#slideshow_image').fadeOut(300, function () {
-        var next_val = document.getElementById("img_no").value;
-        var next_val = Number(next_val) + 1;
-        if (next_val >= images.length) {
-            next_val = 0;
+
+    function rotate(direction, event) {
+
+        log("DIRECTION", direction);
+
+        if (direction == "next") {
+            currdeg = currdeg - 60;
         }
-        $('#slideshow_image').attr('src', 'images/' + images[next_val] + '.jpg');
-        document.getElementById("img_no").value = next_val;
-    });
-    $('#slideshow_image').fadeIn(1000);
+        if (direction == "prev") {
+            currdeg = currdeg + 60;
+        }
+
+        TweenLite.to(carousel, 1, { rotationY: currdeg });
+        TweenLite.to(items, 1, { rotationY: -currdeg });
+    }
 }

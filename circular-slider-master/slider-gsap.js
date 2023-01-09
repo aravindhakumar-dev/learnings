@@ -4,37 +4,28 @@ var prdcate3 = document.querySelector('.prd-categ:nth-child(3)');
 var prdcate4 = document.querySelector('.prd-categ:nth-child(4)');
 var prdcate5 = document.querySelector('.prd-categ:nth-child(5)');
 var prdcate6 = document.querySelector('.prd-categ:nth-child(6)');
-
-document.querySelector('.next').addEventListener('click', () => {
+var nxtbtn = document.querySelector('.next');
+var prevbtn = document.querySelector('.prev');
+nxtbtn.addEventListener('click', () => {
     gsap.to('.slider-container', {
-        rotate: 75,
+        rotate: 45,
         duration: 0.5
 
     })
     gsap.to('.prd-categ', {
-        rotate: -75,
+        rotate: -45,
         duration: 0.5
     })
-    gsap.to(prdcate3, {
-        scale: 1,
-        x: -300,
-        y: -300
-    })
 })
-document.querySelector('.next').addEventListener('click', () => {
+
+prevbtn.addEventListener('click', () => {
     gsap.to('.slider-container', {
-        rotate: 75,
+        rotate: -45,
         duration: 0.5
 
     })
     gsap.to('.prd-categ', {
-        rotate: -75,
+        rotate: 45,
         duration: 0.5
     })
-    gsap.to(prdcate4, {
-        scale: 1,
-        x: -300,
-        y: -300
-    })
 })
-

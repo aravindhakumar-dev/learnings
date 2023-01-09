@@ -2,21 +2,38 @@
 
 <head>
     <link rel="stylesheet" type="text/css" href="style.css">
-    <script type="text/javascript" src="jquery.js"></script>
-    <script type="text/javascript" src="slideshow.js"></script>
+
 </head>
 
 <body>
-
-    <section>
-        <div id="slide_cont">
-            <img src="images/image1.jpg" id="slideshow_image">
+    <div class="container">
+        <div class="carousel">
+            <div class="a">
+                <div class="item">A</div>
+            </div>
+            <div class="b">
+                <div class="item">B</div>
+            </div>
+            <div class="c">
+                <div class="item">C</div>
+            </div>
+            <div class="d">
+                <div class="item">D</div>
+            </div>
+            <div class="e">
+                <div class="item">E</div>
+            </div>
+            <div class="f">
+                <div class="item">F</div>
+            </div>
         </div>
-        <input type="image" id="prev_image" src="images/previous.png">
-        <input type="image" id="next_image" src="images/next.png">
-        <input type="hidden" id="img_no" value="0">
-    </section>
+    </div>
+    <div class="next">Next</div>
+    <div class="prev">Prev</div>
 
+    <script src="slidershow.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.17.0/TweenMax.min.js" type="text/javascript"></script>
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->
 </body>
 
 </html>
