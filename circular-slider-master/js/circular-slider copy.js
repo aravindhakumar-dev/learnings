@@ -12,9 +12,9 @@
 
     function Slider(newSlider, sliderSize, slideSize, animationDuration, autoplayInterval) {
 
-        this.startSetup = new startSetup(sliderSize, slideSize, animationDuration, autoplayInterval),
+        this.startSetup = new startSetup(sliderSize, slideSize, animationDuration, autoplayInterval);
 
-            this.wrapper = newSlider.querySelector('.wrapper');
+        this.wrapper = newSlider.querySelector('.wrapper');
 
         this.slides = newSlider.querySelectorAll('.circular-slider .wrapper .slides-holder .slides-holder__item');
 
@@ -34,8 +34,8 @@
 
         this.currentAngle = 0;
 
-        this.stepAngle = 2 * Math.PI / newSlider.querySelectorAll('.circular-slider .wrapper .slides-holder .slides-holder__item').length;
-
+        /*this.stepAngle = 2 * Math.PI / newSlider.querySelectorAll('.circular-slider .wrapper .slides-holder .slides-holder__item').length;*/
+        this.stepAngle = (2 * Math.PI) / this.slides.length;
         this.currentSlide = 0;
 
         this.slidesHolder.style.transitionDuration = this.startSetup.animationDuration + 'ms';

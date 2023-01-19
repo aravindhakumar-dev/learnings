@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .semi-circular-slider {
+            position: relative;
+            width: 300px;
+            height: 150px;
+            overflow: hidden;
+        }
+
+        .slides-holder {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform-origin: center center;
+            width: 200px;
+            height: 200px;
+            transform: rotate(-90deg);
+        }
+
+        .slide {
+            position: absolute;
+            width: 100%;
+            height: 50%;
+            text-align: center;
+        }
+
+        .prev-slide,
+        .next-slide {
+            position: absolute;
+            bottom: 0;
+        }
+
+        .prev-slide {
+            left: 0;
+        }
+
+        .next-slide {
+            right: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="semi-circular-slider">
+        <div class="slides-holder">
+            <div class="slide">Slide 1</div>
+            <div class="slide">Slide 2</div>
+            <div class="slide">Slide 3</div>
+        </div>
+        <div class="controls">
+            <button class="prev-slide">Prev</button>
+            <button class="next-slide">Next</button>
+        </div>
+    </div>
+    <script>
+        var slider = document.querySelector('.semi-circular-slider');
+        var slides = slider.querySelectorAll('.slide');
+        var prevBtn = slider.querySelector('.prev-slide');
+        var nextBtn = slider.querySelector('.next-slide');
+
+        var currentSlide = 0;
+        var slideAngle = 180 / (slides.length - 1);
+
+        prevBtn.addEventListener('click', prevSlide);
+        nextBtn.addEventListener('click', nextSlide);
+
+        function prevSlide() {
+            currentSlide--;
+            if (currentSlide < 0) {
+                currentSlide = slides.length - 1;
+            }
+            updateSlider();
+        }
+
+        function nextSlide() {
+            currentSlide++;
+            if (currentSlide >= slides.length) {
+                currentSlide = 0;
+            }
+            updateSlider();
+        }
+
+        function updateSlider() {
+            for (var i = 0; i < slides.length; i++) {
+                slides[i].style.transform = 'rotate(' + (i * slideAngle - 90) + 'deg)';
+            }
+        }
+
+        updateSlider();
+
+    </script>
+</body>
+
+</html>
