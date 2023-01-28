@@ -18,7 +18,9 @@ while (have_posts()) :
 endwhile; // End of the loop.
 ?>
 <!--------------------------------------------------------------->
+
 <div class="slider">
+    <h3> Product Category</h3>
     <div class="circular-slider circular-slider-1">
         <div class="wrapper">
             <div class="controls">
@@ -55,7 +57,6 @@ endwhile; // End of the loop.
                                         <a href="' . get_term_link($product_category) . '">
 		                                <img src="' . $thumbnail_url . '" /> </a>
                            </div>';
-                        break;
                     }
                 }
                 ?>
