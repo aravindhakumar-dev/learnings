@@ -177,7 +177,7 @@
 
     Slider.prototype.setAutoplay = function () {
         let _this = this;
-        this.autoplay = setInterval(function () { _this.rotate(-1) }, _this.startSetup.autoplayInterval + 20);
+        this.autoplay = setInterval(function () { _this.rotate(-1) }, _this.startSetup.autoplayInterval + 2);
     };
 
     Slider.prototype.removeStyle = function () {
@@ -231,6 +231,5 @@
         };
 
     };
-    //////////////////////
 
 })();
