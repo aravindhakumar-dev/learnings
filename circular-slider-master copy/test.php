@@ -43,27 +43,38 @@ endwhile; // End of the loop.
                 'hide_empty' => $hide_empty,
                 'include'    => $ids
             ); ?>
-            <?php
-            $product_categories = get_terms('product_cat', $args);
-            $count = count($product_categories);
-            if ($count > 0) {
-                foreach ($product_categories as $product_category) {
-                    $thumbnail_id = get_woocommerce_term_meta($product_category->term_id, 'thumbnail_id', true);
-                    $thumbnail_url = wp_get_attachment_thumb_url($thumbnail_id);
-                    echo '<div class="slides-holder">
-                                    <div class="slides-holder__item">
+            <div class="slides-holder">
+                <?php
+                $product_categories = get_terms('product_cat', $args);
+                $count = count($product_categories);
+                if ($count > 0) {
+                    foreach ($product_categories as $product_category) {
+                        $thumbnail_id = get_woocommerce_term_meta($product_category->term_id, 'thumbnail_id', true);
+                        $thumbnail_url = wp_get_attachment_thumb_url($thumbnail_id);
+                        echo '<div class="slides-holder__item">
                                         <a href="' . get_term_link($product_category) . '">
 		                                <img src="' . $thumbnail_url . '" /> </a>
-                                    </div>
                            </div>';
-                    echo '<div class="descriptions">
-                            <div class="descriptions__item">
-                                <h2>' . $product_category->name . '</h2>
-                            </div>
-                            </div>';
+                        break;
+                    }
                 }
-            }
-            ?>
+                ?>
+            </div>
+            <div class="descriptions">
+                <?php
+                $product_categories = get_terms('product_cat', $args);
+                $count = count($product_categories);
+                if ($count > 0) {
+                    foreach ($product_categories as $product_category) {
+                        $thumbnail_id = get_woocommerce_term_meta($product_category->term_id, 'thumbnail_id', true);
+                        $thumbnail_url = wp_get_attachment_thumb_url($thumbnail_id);
+                        echo '<div class="descriptions__item">
+                                <h2>' . $product_category->name . '</h2>
+                            </div>';
+                    }
+                }
+                ?>
+            </div>
         </div>
     </div>
 </div>
