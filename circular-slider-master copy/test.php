@@ -18,14 +18,6 @@ while (have_posts()) :
 endwhile; // End of the loop.
 ?>
 <!--------------------------------------------------------------->
-<?php
-$args = array(
-    'number'     => $number,
-    'orderby'    => 'slug',
-    'order'      => 'ASC',
-    'hide_empty' => $hide_empty,
-    'include'    => $ids
-); ?>
 <div class="slider">
     <div class="circular-slider circular-slider-1">
         <div class="wrapper">
@@ -44,6 +36,14 @@ $args = array(
                 </div>
             </div>
             <?php
+            $args = array(
+                'number'     => $number,
+                'orderby'    => 'slug',
+                'order'      => 'ASC',
+                'hide_empty' => $hide_empty,
+                'include'    => $ids
+            ); ?>
+            <?php
             $product_categories = get_terms('product_cat', $args);
             $count = count($product_categories);
             if ($count > 0) {
@@ -51,18 +51,19 @@ $args = array(
                     $thumbnail_id = get_woocommerce_term_meta($product_category->term_id, 'thumbnail_id', true);
                     $thumbnail_url = wp_get_attachment_thumb_url($thumbnail_id);
                     echo '<div class="slides-holder">
-					<div class="slides-holder__item">
-        				<a href="' . get_term_link($product_category) . '">
-						<img src="' . $thumbnail_url . '"/></a>
-					</div>
-				</div>
-				<div class="descriptions">
-					<div class="descriptions__item">
-					<h1>' . $product_category->name . '</h1>
-                    </div>
-                </div>';
+                                    <div class="slides-holder__item">
+                                        <a href="' . get_term_link($product_category) . '">
+		                                <img src="' . $thumbnail_url . '" /> </a>
+                                    </div>
+                           </div>';
+                    echo '<div class="descriptions">
+                            <div class="descriptions__item">
+                                <h2>' . $product_category->name . '</h2>
+                            </div>
+                            </div>';
                 }
-            } ?>
+            }
+            ?>
         </div>
     </div>
 </div>
@@ -123,5 +124,6 @@ $args = array(
     <?php echo do_shortcode('[rt-testimonial id="1166" title=""]') ?>
 </div>
 
+<!--------------------------------------------------------------->
 <?php
 get_footer();
