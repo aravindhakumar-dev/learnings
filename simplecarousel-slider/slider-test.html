@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slider from chatgpt + custom code</title>
+    <style>
+        /* Hover effect*/
+        .attachment-woocommerce_thumbnail {
+            z-index: 1;
+        }
+
+        .hover-img-wrap {
+            position: relative;
+            display: inline-block;
+        }
+
+        .hover-img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: none;
+        }
+
+        .hover-img-wrap:hover .hover-img {
+            display: block;
+        }
+
+        /***********************************************/
+        .sectionprd {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .facecarecontainer {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.5s ease;
+        }
+
+        .prdcard {
+            display: flex;
+        }
+
+        .arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 30px;
+            height: 30px;
+            background-color: gray;
+            cursor: pointer;
+        }
+
+        .arrow.left {
+            left: 20px;
+        }
+
+        .arrow.right {
+            right: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="sectionprd">
+        <div class="facecarecontainer">
+            <div class="prdcard">
+                <a
+                    href="https://samudhrikalakshanaherbals.com/index.php/product/pure-herbal-organic-aloe-vera-cucumber-gel-100g/">
+                    <div class="hover-img-wrap">
+                        <img decoding="async" class="hover-img" width="200" height="300"
+                            src="https://samudhrikalakshanaherbals.com/wp-content/uploads/2023/03/Organic-Aloe-Vera-Cucumber-Gel.gif"
+                            alt="">
+                        <img width="200" height="300"
+                            src="https://samudhrikalakshanaherbals.com/wp-content/uploads/2023/03/Organic-Aloe-Vera-Cucumber-Gel-1-300x450.png">
+                    </div>
+                    <div class="prdtitle">
+                        Pure Herbal Organic Aloe Vera Cucumber Gel – 100g </div>
+                </a>
+                <div class="product-shortline">
+                    <p>Moisturizes skin | Slows ageing | Reduce dark circles</p>
+                </div> <span class="woocommerce-Price-amount amount"><bdi><span
+                            class="woocommerce-Price-currencySymbol">₹</span>177.00</bdi></span>
+                <form class="cart" method="post" enctype="multipart/form-data"><input type="hidden" name="add-to-cart"
+                        value="233"><button type="submit">Add to cart</button> </form>
+            </div>
+            <div class="prdcard">
+                <a
+                    href="https://samudhrikalakshanaherbals.com/index.php/product/pure-herbal-real-red-rose-water-120ml/">
+                    <div class="hover-img-wrap">
+                        <img decoding="async" class="hover-img" width="200" height="300"
+                            src="https://samudhrikalakshanaherbals.com/wp-content/uploads/2023/03/Rose-water.gif"
+                            alt="">
+                        <img width="200" height="300"
+                            src="https://samudhrikalakshanaherbals.com/wp-content/uploads/2023/03/Real-Red-Rose-Water-300x450.png">
+                    </div>
+                    <div class="prdtitle">
+                        Pure Herbal Real Red Rose Water – 120ml </div>
+                </a>
+                <div class="product-shortline">
+                    <p>Maintain pH balance | Soothes skin</p>
+                </div> <span class="woocommerce-Price-amount amount"><bdi><span
+                            class="woocommerce-Price-currencySymbol">₹</span>78.00</bdi></span>
+                <form class="cart" method="post" enctype="multipart/form-data"><input type="hidden" name="add-to-cart"
+                        value="231"><button type="submit">Add to cart</button> </form>
+            </div>
+            <div class="prdcard">
+                <a
+                    href="https://samudhrikalakshanaherbals.com/index.php/product/pure-herbal-multani-mitti-facial-pack-powder-100g/">
+                    <div class="hover-img-wrap">
+                        <img decoding="async" class="hover-img" width="200" height="300"
+                            src="https://samudhrikalakshanaherbals.com/wp-content/uploads/2023/03/Multhani-metti.gif"
+                            alt="">
+                        <img width="200" height="300"
+                            src="https://samudhrikalakshanaherbals.com/wp-content/uploads/2023/03/12-300x450.png">
+                    </div>
+                    <div class="prdtitle">
+                        Pure Herbal Multani Mitti Facial Pack Powder – 100g </div>
+                </a>
+                <div class="product-shortline">
+                    <p>De-tans skin | Removes Black heads/White heads</p>
+                </div> <span class="woocommerce-Price-amount amount"><bdi><span
+                            class="woocommerce-Price-currencySymbol">₹</span>78.00</bdi></span>
+                <form class="cart" method="post" enctype="multipart/form-data"><input type="hidden" name="add-to-cart"
+                        value="226"><button type="submit">Add to cart</button> </form>
+            </div>
+            <div class="prdcard">
+                <a
+                    href="https://samudhrikalakshanaherbals.com/index.php/product/pure-herbal-hibiscus-petals-facial-powder-100g/">
+                    <div class="hover-img-wrap">
+                        <img decoding="async" class="hover-img" width="200" height="300"
+                            src="https://samudhrikalakshanaherbals.com/wp-content/uploads/2023/03/Hibiscus-powder-1.gif"
+                            alt="">
+                        <img width="200" height="300"
+                            src="https://samudhrikalakshanaherbals.com/wp-content/uploads/2023/03/Pure-Herbal-Hibiscus-Petals-Facial-Powder.png">
+                    </div>
+                    <div class="prdtitle">
+                        Pure Herbal Hibiscus Petals Facial Powder – 100g </div>
+                </a>
+                <div class="product-shortline">
+                    <p>Cleanser | Heals scars | Exfoliates skin</p>
+                </div> <span class="woocommerce-Price-amount amount"><bdi><span
+                            class="woocommerce-Price-currencySymbol">₹</span>222.00</bdi></span>
+                <form class="cart" method="post" enctype="multipart/form-data"><input type="hidden" name="add-to-cart"
+                        value="225"><button type="submit">Add to cart</button> </form>
+            </div>
+            <div class="prdcard">
+                <a
+                    href="https://samudhrikalakshanaherbals.com/index.php/product/pure-organic-kasthuri-manjal-powder-100g/">
+                    <div class="hover-img-wrap">
+                        <img decoding="async" class="hover-img" width="200" height="300"
+                            src="https://samudhrikalakshanaherbals.com/wp-content/uploads/2023/03/Kasthuri-manal-1.gif"
+                            alt="">
+                        <img width="200" height="300"
+                            src="https://samudhrikalakshanaherbals.com/wp-content/uploads/2023/03/Organic-Kasthuri-Manjal-Powder.png">
+                    </div>
+                    <div class="prdtitle">
+                        Pure Organic Kasthuri Manjal Powder – 100g </div>
+                </a>
+                <div class="product-shortline">
+                    <p>Slows down hair-growth | Even skin-tone</p>
+                </div> <span class="woocommerce-Price-amount amount"><bdi><span
+                            class="woocommerce-Price-currencySymbol">₹</span>150.00</bdi></span>
+                <form class="cart" method="post" enctype="multipart/form-data"><input type="hidden" name="add-to-cart"
+                        value="213"><button type="submit">Add to cart</button> </form>
+            </div>
+            <div class="prdcard">
+                <a href="https://samudhrikalakshanaherbals.com/index.php/product/pure-orange-peel-facial-powder-100g/">
+                    <div class="hover-img-wrap">
+                        <img decoding="async" class="hover-img" width="200" height="300"
+                            src="https://samudhrikalakshanaherbals.com/wp-content/uploads/2023/03/orange-peel-powder-2.gif"
+                            alt="">
+                        <img width="200" height="300"
+                            src="https://samudhrikalakshanaherbals.com/wp-content/uploads/2023/03/Pure-Herbal-Orange-Peel-Facial-Powder-300x450.png">
+                    </div>
+                    <div class="prdtitle">
+                        Pure Orange Peel Facial Powder – 100g </div>
+                </a>
+                <div class="product-shortline">
+                    <p>Fades Blemishes | Firms Skin | Reduces large pores</p>
+                </div> <span class="woocommerce-Price-amount amount"><bdi><span
+                            class="woocommerce-Price-currencySymbol">₹</span>150.00</bdi></span>
+                <form class="cart" method="post" enctype="multipart/form-data"><input type="hidden" name="add-to-cart"
+                        value="212"><button type="submit">Add to cart</button> </form>
+            </div>
+            <div class="prdcard">
+                <a
+                    href="https://samudhrikalakshanaherbals.com/index.php/product/pure-herbal-rose-petals-facial-powder-100g/">
+                    <div class="hover-img-wrap">
+                        <img decoding="async" class="hover-img" width="200" height="300"
+                            src="https://samudhrikalakshanaherbals.com/wp-content/uploads/2023/03/rose-petal-powder-1.gif"
+                            alt="">
+                        <img width="200" height="300"
+                            src="https://samudhrikalakshanaherbals.com/wp-content/uploads/2023/03/23-300x450.png">
+                    </div>
+                    <div class="prdtitle">
+                        Pure Herbal Rose Petals Facial Powder – 100g </div>
+                </a>
+                <div class="product-shortline">
+                    <p>Soothing effect | Skin toner | Relieves sunburn</p>
+                </div> <span class="woocommerce-Price-amount amount"><bdi><span
+                            class="woocommerce-Price-currencySymbol">₹</span>195.00</bdi></span>
+                <form class="cart" method="post" enctype="multipart/form-data"><input type="hidden" name="add-to-cart"
+                        value="211"><button type="submit">Add to cart</button> </form>
+            </div>
+            <div class="prdcard">
+                <a href="https://samudhrikalakshanaherbals.com/index.php/product/pure-herbal-face-wash-powder-100g/">
+                    <div class="hover-img-wrap">
+                        <img decoding="async" class="hover-img" width="200" height="300"
+                            src="https://samudhrikalakshanaherbals.com/wp-content/uploads/2023/03/Face-wash-powder.gif"
+                            alt="">
+                        <img width="200" height="300"
+                            src="https://samudhrikalakshanaherbals.com/wp-content/uploads/2023/03/10-300x450.png">
+                    </div>
+                    <div class="prdtitle">
+                        Pure Herbal Face Wash Powder – 100g </div>
+                </a>
+                <div class="product-shortline">
+                    <p>Softens skin | Absorbs excess oil | Fresh skin</p>
+                </div> <span class="woocommerce-Price-amount amount"><bdi><span
+                            class="woocommerce-Price-currencySymbol">₹</span>150.00</bdi></span>
+                <form class="cart" method="post" enctype="multipart/form-data"><input type="hidden" name="add-to-cart"
+                        value="208"><button type="submit">Add to cart</button> </form>
+            </div>
+            <div class="prdcard">
+                <a
+                    href="https://samudhrikalakshanaherbals.com/index.php/product/pure-herbal-gold-facial-pack-powder-33-herbs-100g/">
+                    <div class="hover-img-wrap">
+                        <img decoding="async" class="hover-img" width="200" height="300"
+                            src="https://samudhrikalakshanaherbals.com/wp-content/uploads/2023/03/Gold-facial-pack.gif"
+                            alt="">
+                        <img width="200" height="300"
+                            src="https://samudhrikalakshanaherbals.com/wp-content/uploads/2023/03/9-300x450.png">
+                    </div>
+                    <div class="prdtitle">
+                        Pure Herbal GOLD Facial Pack Powder (33 Herbs) – 100g </div>
+                </a>
+                <div class="product-shortline">
+                    <p>Softens skin | Absorbs excess oil | Fresh skin</p>
+                </div> <span class="woocommerce-Price-amount amount"><bdi><span
+                            class="woocommerce-Price-currencySymbol">₹</span>222.00</bdi></span>
+                <form class="cart" method="post" enctype="multipart/form-data"><input type="hidden" name="add-to-cart"
+                        value="196"><button type="submit">Add to cart</button> </form>
+            </div>
+        </div>
+        <div class="arrow left"></div>
+        <div class="arrow right"></div>
+    </div>
+
+    <script>
+        const slider = document.querySelector('.sectionprd');
+        const slidesContainer = document.querySelector('.facecarecontainer');
+        const slides = document.querySelectorAll('.prdcard');
+        const slideWidth = slides[0].offsetWidth;
+        const numVisibleSlides = 4;
+
+        let currentSlide = 0;
+
+        function updateSlider() {
+            const offset = currentSlide * slideWidth * -1;
+            slidesContainer.style.transform = `translateX(${offset}px)`;
+        }
+
+        function handleArrowClick(direction) {
+            if (direction === 'left') {
+                currentSlide = Math.max(0, currentSlide - 1);
+            } else {
+                currentSlide = Math.min(slides.length - numVisibleSlides, currentSlide + 1);
+            }
+            updateSlider();
+        }
+
+        document.querySelector('.arrow.left').addEventListener('click', () => {
+            handleArrowClick('left');
+        });
+
+        document.querySelector('.arrow.right').addEventListener('click', () => {
+            handleArrowClick('right');
+        });
+
+        window.addEventListener('resize', () => {
+            slideWidth = slides[0].offsetWidth;
+            updateSlider();
+        });
+
+        updateSlider();
+
+    </script>
+</body>
+
+</html>
